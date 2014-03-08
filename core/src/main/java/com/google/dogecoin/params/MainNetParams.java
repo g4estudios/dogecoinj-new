@@ -30,20 +30,20 @@ public class MainNetParams extends NetworkParameters {
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);
-        dumpedPrivateKeyHeader = 158; //This is always addressHeader + 128
-        addressHeader = 30;
+        dumpedPrivateKeyHeader = 161; //This is always addressHeader + 128
+        addressHeader = 33;
         //p2shHeader = 5; //We don't have this
         acceptableAddressCodes = new int[] { addressHeader };
-        port = 22556;
-        packetMagic = 0xc0c0c0c0;
+        port = 41878;
+        packetMagic = 0xe8f1c4ac;
         genesisBlock.setDifficultyTarget(0x1e0ffff0L);
-        genesisBlock.setTime(1386325540L);
-        genesisBlock.setNonce(99943L);
+        genesisBlock.setTime(1392841423L);
+        genesisBlock.setNonce(3236648);
         id = ID_MAINNET;
-        subsidyDecreaseBlockCount = 100000;
+        subsidyDecreaseBlockCount = 1024; //TODO Wormhole impl
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"),
+        checkState(genesisHash.equals("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f"), //genesisHash
                 genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
@@ -55,12 +55,12 @@ public class MainNetParams extends NetworkParameters {
         checkpoints.put(91842, new Sha256Hash("00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec"));
         checkpoints.put(91880, new Sha256Hash("00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721"));
         checkpoints.put(200000, new Sha256Hash("000000000000034a7dedef4a161fa058a2d67a173a90155f3a2fe6fc132e0ebf")); */
-        //TODO Get actual Dogecoin checkpoints
+        //TODO Get actual EMC2 checkpoints
 
         dnsSeeds = new String[] {
-                "seed.dogecoin.com",
-                "seed.mophides.com",
-                "seed.dglibrary.org",
+                "dnsseed.einsteinium.org",
+                "testnet-seed.einsteiniumtools.com",
+                "testnet-seed.weminemnc.com"
         };
     }
 
