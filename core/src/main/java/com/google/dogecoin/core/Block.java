@@ -168,6 +168,7 @@ public class Block extends Message {
      * <p>The half-life is controlled by {@link com.google.dogecoin.core.NetworkParameters#getSubsidyDecreaseBlockCount()}.
      * </p>
      */
+    //TODO EMC2 don't want Wormhole impl here becasue DOGE don't use it in android and people don't mine on Android client
     public BigInteger getBlockInflation(int height) {
         return Utils.toNanoCoins(50, 0).shiftRight(height / params.getSubsidyDecreaseBlockCount());
     }
