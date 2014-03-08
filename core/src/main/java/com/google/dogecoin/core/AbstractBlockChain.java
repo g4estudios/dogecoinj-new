@@ -796,6 +796,7 @@ public abstract class AbstractBlockChain {
     /**
      * Throws an exception if the blocks difficulty is not correct.
      */
+    //FIXME // Using KGW
     private void checkDifficultyTransitions(StoredBlock storedPrev, Block nextBlock) throws BlockStoreException, VerificationException {
         checkState(lock.isHeldByCurrentThread());
         Block prev = storedPrev.getHeader();

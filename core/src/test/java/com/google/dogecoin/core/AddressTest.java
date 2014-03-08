@@ -37,8 +37,8 @@ public class AddressTest {
         assertEquals("n4eA2nbYqErp7H6jebchxAN59DmNpksexv", a.toString());
         assertFalse(a.isP2SHAddress());*/ //TODO: No Testnet info...
 
-        Address b = new Address(mainParams, Hex.decode("908f4849864c54dadc24bf01c0c2dcd7180fd038"));
-        assertEquals("DJKTVKGSDp5aUQzgtWyhbMtsXvW8s2vVRU", b.toString());
+        Address b = new Address(mainParams, Hex.decode("908f4849864c54dadc24bf01c0c2dcd7180fd038")); //FIXME need to get the correct value
+        assertEquals("ES9oQDrK44U5fHv58SqjLkRLBoNaErpDV2", b.toString());
         //assertFalse(b.isP2SHAddress());
     }
     
@@ -47,8 +47,8 @@ public class AddressTest {
 /*        Address a = new Address(testParams, "n4eA2nbYqErp7H6jebchxAN59DmNpksexv");
         assertEquals("fda79a24e50ff70ff42f7d89585da5bd19d9e5cc", Utils.bytesToHexString(a.getHash160()));*/ //TODO Testnet.
 
-        Address b = new Address(mainParams, "DJKTVKGSDp5aUQzgtWyhbMtsXvW8s2vVRU");
-        assertEquals("908f4849864c54dadc24bf01c0c2dcd7180fd038", Utils.bytesToHexString(b.getHash160()));
+        Address b = new Address(mainParams, "ES9oQDrK44U5fHv58SqjLkRLBoNaErpDV2");
+        assertEquals("908f4849864c54dadc24bf01c0c2dcd7180fd038", Utils.bytesToHexString(b.getHash160())); //FIXME need to get the correct value
     }
     
     @Test
@@ -88,13 +88,13 @@ public class AddressTest {
     
     @Test
     public void getNetwork() throws Exception {
-        NetworkParameters params = Address.getParametersFromAddress("DJKTVKGSDp5aUQzgtWyhbMtsXvW8s2vVRU");
+        NetworkParameters params = Address.getParametersFromAddress("ES9oQDrK44U5fHv58SqjLkRLBoNaErpDV2");
         assertEquals(MainNetParams.get().getId(), params.getId());
 /*        params = Address.getParametersFromAddress("n4eA2nbYqErp7H6jebchxAN59DmNpksexv");
         assertEquals(TestNet3Params.get().getId(), params.getId());*/
     }
     
-/*    @Test //Doge doesn't have this.
+/*    @Test //EMC2 doesn't have this.
     public void p2shAddress() throws Exception {
         // Test that we can construct P2SH addresses
         Address mainNetP2SHAddress = new Address(MainNetParams.get(), "35b9vsyH1KoFT5a5KtrKusaCcPLkiSo1tU");

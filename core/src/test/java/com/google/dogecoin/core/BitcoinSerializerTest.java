@@ -27,7 +27,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
-
+//FIXME Anyone know how to test this with EMC2?
 public class BitcoinSerializerTest {
     private final byte[] addrMessage = Hex.decode("c0c0c0c06164647200000000000000001f00000081de49a4019c36d" +
             "052010000000000000000000000000000000000ffff614df4e2581c");

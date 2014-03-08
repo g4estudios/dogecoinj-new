@@ -84,14 +84,14 @@ public class Transaction extends ChildMessage implements Serializable {
      * If fee is lower than this value (in satoshis), a default reference client will treat it as if there were no fee.
      * Currently this is 10000 satoshis.
      */
-    public static final BigInteger REFERENCE_DEFAULT_MIN_TX_FEE = BigInteger.valueOf(100000000); // 1 Doge minimum fee!
+    public static final BigInteger REFERENCE_DEFAULT_MIN_TX_FEE = BigInteger.valueOf(100);   // MIN_TX_FEE // EMC2 minimum fee!
 
     /**
      * Any standard (ie pay-to-address) output smaller than this value (in satoshis) will most likely be rejected by the network.
      * This is calculated by assuming a standard output will be 34 bytes, and then using the formula used in
      * {@link TransactionOutput#getMinNonDustValue(BigInteger)}. Currently it's 5460 satoshis.
      */
-    public static final BigInteger MIN_NONDUST_OUTPUT = BigInteger.ONE; //DOGE: We can send one "shibetoshi" but this will cost us extra fee!
+    public static final BigInteger MIN_NONDUST_OUTPUT = Utils.toNanoCoins("0.00100000"); //main.h DUST_SOFT_LIMIT        0.001 coins
 
     // These are serialized in both dogecoin and java serialization.
     private long version;
@@ -649,7 +649,7 @@ public class Transaction extends ChildMessage implements Serializable {
                 s.append(scriptPubKey);
                 s.append(" ");
                 s.append(bitcoinValueToFriendlyString(out.getValue()));
-                s.append(" DOGE");
+                s.append(" EMC2");
                 if (!out.isAvailableForSpending()) {
                     s.append(" Spent");
                 }
