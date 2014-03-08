@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.google.bitcoin.protocols.payments;
+package com.google.dogecoin.protocols.payments;
 
 import com.google.dogecoin.core.*;
 import com.google.dogecoin.params.TestNet3Params;
